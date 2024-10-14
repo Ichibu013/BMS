@@ -1,0 +1,94 @@
+
+mysql> use businessproject;
+Database changed
+mysql> desc customer;
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| cust_id       | int         | NO   | PRI | NULL    |       |
+| c_nam         | varchar(30) | YES  |     | NULL    |       |
+| c_lnam        | varchar(30) | YES  |     | NULL    |       |
+| c_phno        | varchar(10) | YES  |     | NULL    |       |
+| c_adrs        | varchar(50) | YES  |     | NULL    |       |
+| last_pur_date | date        | YES  |     | NULL    |       |
+| last_pur_amt  | int         | YES  |     | NULL    |       |
+| pwd           | varchar(20) | NO   |     | NULL    |       |
+| user_name     | varchar(45) | NO   | UNI | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+9 rows in set (0.01 sec)
+
+mysql> desc purchase;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| pur_id    | int         | YES  |     | NULL    |       |
+| prod_id   | int         | YES  |     | NULL    |       |
+| total_amt | int         | YES  |     | NULL    |       |
+| cust_id   | int         | YES  | MUL | NULL    |       |
+| pay_mtd   | varchar(30) | YES  |     | NULL    |       |
+| amt_exg   | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> desc employee;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| emp_id       | int         | NO   | PRI | NULL    |       |
+| e_nam        | varchar(30) | YES  |     | NULL    |       |
+| e_lnam       | varchar(30) | YES  |     | NULL    |       |
+| e_phno       | varchar(10) | YES  |     | NULL    |       |
+| e_adrs       | varchar(50) | YES  |     | NULL    |       |
+| e_cno        | varchar(10) | YES  |     | NULL    |       |
+| emp_eid      | varchar(30) | YES  |     | NULL    |       |
+| emp_e_pswd   | varchar(30) | YES  |     | NULL    |       |
+| last_entry   | varchar(20) | YES  |     | NULL    |       |
+| dept_nam     | varchar(20) | YES  |     | NULL    |       |
+| date_of_join | date        | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+11 rows in set (0.01 sec)
+
+mysql> desc admin;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| admin_id     | int         | NO   | PRI | NULL    |       |
+| admin_nam    | varchar(30) | YES  |     | NULL    |       |
+| admin_phno   | varchar(10) | YES  |     | NULL    |       |
+| admin_adrs   | varchar(50) | YES  |     | NULL    |       |
+| admin_eid    | varchar(30) | NO   | UNI | NULL    |       |
+| last_entry   | varchar(20) | YES  |     | NULL    |       |
+| dept_nam     | varchar(20) | YES  |     | NULL    |       |
+| date_of_join | date        | YES  |     | NULL    |       |
+| a_pwd        | varchar(45) | NO   |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+
+mysql> desc orders;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| ord_id           | int         | NO   | PRI | NULL    |       |
+| prod_id          | int         | YES  | MUL | NULL    |       |
+| category         | varchar(30) | YES  |     | NULL    |       |
+| placed_by_emp_id | int         | YES  |     | NULL    |       |
+| perv_deli_date   | date        | YES  |     | NULL    |       |
+| nxt_deli_date    | date        | YES  |     | NULL    |       |
+| pay_status       | varchar(10) | YES  |     | NULL    |       |
+| pay_amt          | int         | YES  |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> desc attendence;
++-------------+-----------+------+-----+---------+-------+
+| Field       | Type      | Null | Key | Default | Extra |
++-------------+-----------+------+-----+---------+-------+
+| emp_id      | int       | YES  | MUL | NULL    |       |
+| login_date  | date      | YES  |     | NULL    |       |
+| login_time  | timestamp | YES  |     | NULL    |       |
+| logout_time | timestamp | YES  |     | NULL    |       |
++-------------+-----------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql>
